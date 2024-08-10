@@ -6,5 +6,5 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun MainScreen(){
-    Text(text = "Hello World", fontSize = 24.sp)
+    Text(text = "Hello from KMApp", fontSize = 24.sp)
 }

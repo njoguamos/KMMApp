@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.compose")
@@ -7,7 +9,7 @@ plugins {
 
 // Use plugins in our scripts
 kotlin {
-    jvmToolchain(17) // Use Java 17
+    jvmToolchain(20) // Use Java 17
     androidTarget() // Supports Android
     jvm() // As desktop target
 
@@ -46,5 +48,12 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+    }
+}
+
+kotlin.targets.withType<KotlinNativeTarget>().configureEach {
+    binaries.framework {
+        baseName = "KmmApp"
+        isStatic = true
     }
 }

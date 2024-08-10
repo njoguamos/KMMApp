@@ -13,6 +13,16 @@ kotlin {
     iosX64() // Supports iOS (simulator)
     iosArm64() // Supports iOS (device)
     iosSimulatorArm64() // Supports iOS (simulator)
+
+    // Dependencies that are shared between all targets
+    sourceSets.commonMain.dependencies {
+        // core building blocks for Jetpack Compose
+        implementation(compose.runtime)
+        //  foundational UI components like layouts, text, and drawing utilities for building the interface.
+        implementation(compose.foundation)
+        // Includes Material Design 3 components, including buttons, shapes, and typography.
+        implementation(compose.material3)
+    }
 }
 
 android {

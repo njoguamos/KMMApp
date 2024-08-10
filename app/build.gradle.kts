@@ -36,6 +36,11 @@ kotlin {
         // newer UI components.
         implementation("androidx.appcompat:appcompat:1.7.0")
     }
+
+    // Desktop-specific dependencies
+    sourceSets.jvmMain.dependencies {
+        implementation(compose.desktop.currentOs)
+    }
 }
 
 android {

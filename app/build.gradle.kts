@@ -1,6 +1,8 @@
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.compose")
     id("com.android.application")
+    id("org.jetbrains.compose")
 }
 
 // Use plugins in our scripts
